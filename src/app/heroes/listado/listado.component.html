@@ -1,0 +1,23 @@
+<p>Listado de Héroes</p>
+
+<!-- 
+    Este if así me verifica que heroeBorrado no sea ni '', ni null, ni false ni undefined
+    En definitiva, que exista y tenga contenido
+-->
+<div *ngIf="heroeBorrado; else showComment">
+    <h3>Héroe Borrado: <small>{{ heroeBorrado }}</small></h3>
+</div>
+
+<ng-template #showComment>
+    <h3>No se ha borrado nada</h3>
+</ng-template>
+
+<button (click)="borrarHeroe()">
+    Borrar héroe
+</button>
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index">
+        {{ i + 1 }} - {{ heroe }}
+    </li>
+</ul>
