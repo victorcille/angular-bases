@@ -1,0 +1,16 @@
+<h3>Agregar <small>{{ nuevo.nombre }}</small></h3>
+<hr>
+
+<form (ngSubmit)="agregar()">
+    <!-- 
+        Con el ngModel entre corchetes '[]' estamos escuchando lo que vale el nuevo.nombre (por eso me saca por defecto lo que vale)
+        Si además lo ponemos entre paréntesis '()' le estamos asignando al nuevo.nombre el valor que le demos al input
+        Esto sería el two way data binding
+    -->
+    <input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="nuevo.nombre">
+    <input type="number" placeholder="Poder" name="poder" [(ngModel)]="nuevo.poder">
+
+    <button>
+        Agregar
+    </button>
+</form>
